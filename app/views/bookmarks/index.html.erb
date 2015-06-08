@@ -1,6 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Bookmarks</h1>
+<%= link_to 'New Bookmark', new_bookmark_path %>
+<br>
+
+<% @bookmarks.each do |bookmark| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3><%= bookmark.title %></h3>
+      <%= bookmark.url %>
+    </div> 
+  </div>
+<% end %>
+
 
 <table>
   <thead>
@@ -24,6 +36,6 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Bookmark', new_bookmark_path %>
+
+
